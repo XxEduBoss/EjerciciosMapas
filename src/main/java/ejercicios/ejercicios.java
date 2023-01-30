@@ -74,12 +74,55 @@ public class ejercicios {
         jugadoresPorPosicionBRA.put("DFC", List.of("Roque Junior", "Lúcio", "Cafú", "Roberto Carlos"));
         jugadoresPorPosicionBRA.put("POR", List.of("Marcos"));
 
+        Map<String, List<String>> jugadoresPorPosicionFRA = new HashMap<>();
+        jugadoresPorPosicionFRA.put("DEL", List.of("Thierry Henry", "Kylian Mbappé"));
+        jugadoresPorPosicionFRA.put("MC", List.of("Cantona", "Zinedine Zidane", "Patrick Vieira", "Raymond Kopa", "Michel Platini"));
+        jugadoresPorPosicionFRA.put("DFC", List.of("Marcel Desailly", "Laurent Blanc", "Lilian Thuram"));
+        jugadoresPorPosicionFRA.put("POR", List.of("Hugo Lloris"));
+
 
         Map<String, Map<String, List<String>>> selecionesPorPosicion = new HashMap<>();
         selecionesPorPosicion.put("Selección Española", jugadoresPorPosicionESP);
         selecionesPorPosicion.put("Selección Brasileña", jugadoresPorPosicionBRA);
+        selecionesPorPosicion.put("Selección Francesa", jugadoresPorPosicionFRA);
 
         System.out.println(selecionesPorPosicion);
+
+
+
+        //EJERCICIO 6
+       for(String pais : selecionesPorPosicion.keySet()){
+
+           System.out.println("------------- " + pais + " -------------");
+
+           for (String posicion : selecionesPorPosicion.get(pais).keySet()){
+
+               System.out.println("*** " + posicion + " ***");
+               System.out.println("Jugadores ---> " + selecionesPorPosicion.get(pais).get(posicion).size() + "\n");
+
+           }
+
+       }
+
+
+
+       //EJERCICIO 7
+        for(String pais : selecionesPorPosicion.keySet()){
+
+            System.out.println("------------- " + pais + " -------------");
+            Integer totalJugadores = 0;
+
+            for(String posicion : selecionesPorPosicion.get(pais).keySet()){
+
+                totalJugadores += selecionesPorPosicion.get(pais).get(posicion).size();
+
+            }
+            System.out.println("Número total de jugadores: " + totalJugadores + "\n");
+
+        }
+
+
+
 
 
         //System.out.println(selecVic);
